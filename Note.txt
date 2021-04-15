@@ -12,14 +12,15 @@ SELECT * from startupIdea;
 =======================================================
 1. Create requirements.txt file
 pip install pipreqs
-pipreqs --encoding=utf8 C:\Users\bston\Desktop\StartupValidator --force
+pipreqs --encoding=utf8 C:\Users\bston\Desktop\StartupIdeasEvaluator --force
 
 2. Push to Github
 git init
 git add .
 git status
 git commit -m "Updates"
-git remote add origin https://github.com/apiusage/startupvalidator.git
+git remote add origin https://github.com/apiusage/StartupIdeasEvaluator.git
+git remote set-url origin https://github.com/apiusage/StartupIdeasEvaluator.git
 git push -u origin master
 
 https://share.streamlit.io/
