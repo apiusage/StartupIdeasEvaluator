@@ -1,4 +1,5 @@
-cd C:\Users\bston\Desktop\StartupValidator
+cd C:\Users\bston\Desktop\StartupIdeasEvaluator
+
 streamlit run homepage.py
 streamlit run homepage.py --logger.level=debug
 
@@ -11,13 +12,15 @@ SELECT * from startupIdea;
 =======================================================
 1. Create requirements.txt file
 pip install pipreqs
-pipreqs --encoding=utf8 C:\Users\bston\Desktop\4DApp --force
+pipreqs --encoding=utf8 C:\Users\bston\Desktop\StartupValidator --force
 
 2. Push to Github
+git init
 git add .
+git status
 git commit -m "Updates"
-git remote add origin https://github.com/apiusage/4danalysis.git
-git push origin master
+git remote add origin https://github.com/apiusage/startupvalidator.git
+git push -u origin master
 
 https://share.streamlit.io/
 
@@ -28,3 +31,8 @@ https://www.youtube.com/watch?v=sO4IKex53JY
 git add README.md main.py
 git commit -m "Updates"
 git push origin master
+
+=======================================================
+Install tags
+pip install --upgrade streamlit_tags
+pip install --extra-index-url https://pypi.fury.io/arrow-nightlies/ --pre pyarrow

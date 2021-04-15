@@ -3,22 +3,20 @@ import sqlite3
 conn = sqlite3.connect('data.db',check_same_thread=False)
 c = conn.cursor()
 
-customer_group = customerProblem = business_model = product = None
-hair_on_fire_factor = access_to_market = None
-day_1_revenue = revenueScalability = defensibility = lackofCompetitors = None
-personal_Passion = unfair_Advantage = ipCreation = acquisition_Potential = None
+customerProblem = productFeatures = business_model = product = None
+hair_on_fire_factor = access_to_market = day_1_revenue = revenueScalability = defensibility = None
+lackofCompetitors = personal_Passion = unfair_Advantage = ipCreation = acquisition_Potential = None
 
 # Pack list
-data = (customer_group, customerProblem, business_model, product,
-        hair_on_fire_factor, access_to_market, 
-        day_1_revenue, revenueScalability, defensibility, lackofCompetitors, 
-        personal_Passion, unfair_Advantage, ipCreation, acquisition_Potential)
+data = (customerProblem, productFeatures, business_model, product, 
+        hair_on_fire_factor, access_to_market, day_1_revenue, revenueScalability, defensibility, 
+        lackofCompetitors, personal_Passion, unfair_Advantage, ipCreation, acquisition_Potential)
 
 def create_table():
     c.execute('CREATE TABLE IF NOT EXISTS \
         startupIdea( \
-            customer_group TEXT, \
             customerProblem TEXT, \
+            productFeatures TEXT, \
             business_model TEXT, \
             product TEXT, \
             hair_on_fire_factor TEXT, \
@@ -35,10 +33,9 @@ def create_table():
 
 # https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
 def add_data(*data):
-    c.execute('INSERT INTO startupIdea(customer_group, customerProblem, business_model, product, \
-        hair_on_fire_factor, access_to_market, \
-        day_1_revenue, revenueScalability, defensibility, lackofCompetitors, \
-        personal_Passion, unfair_Advantage, ipCreation, acquisition_Potential) \
+    c.execute('INSERT INTO startupIdea(customerProblem, productFeatures, business_model, product, \
+        hair_on_fire_factor, access_to_market, day_1_revenue, revenueScalability, defensibility, \
+        lackofCompetitors, personal_Passion, unfair_Advantage, ipCreation, acquisition_Potential) \
         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', data)
     conn.commit()
 
@@ -59,8 +56,8 @@ def get_product_by_name(product):
 
 def edit_product_data(*updatedData):
     c.execute("UPDATE startupIdea SET \
-                customer_group=?,\
                 customerProblem=?,\
+                productFeatures=?,\
                 business_model=?,\
                 product=?,\
                 hair_on_fire_factor=?,\
