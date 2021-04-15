@@ -20,7 +20,6 @@ git add .
 git status
 git commit -m "Updates"
 git remote add origin https://github.com/apiusage/StartupIdeasEvaluator.git
-git remote set-url origin https://github.com/apiusage/StartupIdeasEvaluator.git
 git push -u origin master
 
 https://share.streamlit.io/
@@ -37,3 +36,10 @@ git push origin master
 Install tags
 pip install --upgrade streamlit_tags
 pip install --extra-index-url https://pypi.fury.io/arrow-nightlies/ --pre pyarrow
+
+=======================================================
+Store your credentials
+git config credential.helper store
+git push http://example.com/repo.git
+Username: <type your username>
+Password: <type your password>
